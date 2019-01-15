@@ -1,2 +1,3 @@
-import {bootstrap} from './bootstrap'
-bootstrap()
+import {run} from './bootstrap'
+
+run()

@@ -8,7 +8,7 @@ interface Attrs {
     data: any;
 }
 
-export class DebugComponent implements ClassComponent<Attrs>{
+export class DebugComponent implements ClassComponent<Attrs> {
     private data: any
 
     constructor ({attrs: {data: input}}: CVnode<Attrs>) {
