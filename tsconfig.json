@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "baseUrl": "src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@share/*": ["share/*"],
+      "@logic/*": ["logic/*"],
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"]
+    },
+    "rootDirs": [
+      "src/lib"
+    ]
+
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
