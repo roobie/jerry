@@ -5,9 +5,11 @@ import {
 } from 'mithril'
 
 import {TodoListItem, TodoListItemComponent} from '@components/todo-list-item'
+import { CrudRepository } from '@share/data-flow';
 
 interface Attrs {
-    items: TodoListItem[];
+    // items: TodoListItem[];
+    repo: CrudRepository<TodoListItem>
 }
 
 export class TodoListComponent implements ClassComponent<Attrs> {
@@ -16,6 +18,12 @@ export class TodoListComponent implements ClassComponent<Attrs> {
     }
 
     view ({attrs}: CVnode<Attrs>) {
-        return m('div', attrs.items.map(item => m(TodoListItemComponent, {item})))
+        const children = attrs.repo.getAll()
+            .map((item: TodoListItem) => m(TodoListItemComponent, {
+                item,
+                onItemUpdated: (updatedItem: TodoListItem) =>
+                    attrs.repo.put(updatedItem)
+            }))
+        return m('div', children)
     }
 }

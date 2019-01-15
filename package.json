@@ -15,7 +15,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "csjs": "^1.1.0",
-    "list": "^2.0.16",
+    "list": "^2.0.12",
     "mithril": "^1.1.6"
   },
   "devDependencies": {
